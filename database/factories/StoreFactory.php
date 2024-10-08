@@ -20,7 +20,7 @@ class StoreFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->company,
+            'name' => $this->faker->firstNameFemale . ' ' . $this->faker->monthName,
             'open' => $this->faker->boolean(75),
             'type' => $this->faker->numberBetween(1, 3),
             'max_delivery_distance' => $this->faker->numberBetween(10, 100),

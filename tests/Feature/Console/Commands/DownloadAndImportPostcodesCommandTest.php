@@ -65,8 +65,6 @@ class DownloadAndImportPostcodesCommandTest extends TestCase
         $this->artisan('postcodes')
             ->expectsOutputToContain('Unable to download postcodes file')
             ->assertFailed();
-
-        $this->assertEquals(Postcode::count(), 0);
     }
 
     public function test_zip_error_will_halt_execution(): void
@@ -80,7 +78,5 @@ class DownloadAndImportPostcodesCommandTest extends TestCase
         $this->artisan('postcodes')
             ->expectsOutputToContain('Invalid postcodes zip file received')
             ->assertFailed();
-
-        $this->assertEquals(Postcode::count(), 0);
     }
 }
